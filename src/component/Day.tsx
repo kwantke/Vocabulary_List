@@ -1,12 +1,27 @@
 import dummy from "../db/data.json"
 import { useParams } from "react-router-dom" 
 import Word, { IWord } from "./Word";
+import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 export default function Day(){
     
 
     const {day} = useParams<{day:string}>();
-    const wordList:IWord[]= dummy.words.filter(word => word.day===day);
+    //const wordList:IWord[]= dummy.words.filter(word => word.day===day);
     
+    //
+    const wordList:IWord[] = useFetch(`http://localhost:3001/words?day=${day}`);
+    /*
+    const [wordList, setWordList] = useState<IWord[]>([]);
+    useEffect(()=>{
+        fetch(`http://localhost:3001/words?day=${day}`)
+        .then(res =>{
+            return res.json()
+        })
+        .then(data =>{
+            setWordList(data);
+        })
+    },[day])*/
     
     return <>
         <h2>Day {day}</h2>
