@@ -4,7 +4,9 @@ import useFetch from "../hooks/useFetch";
 import { IDay } from "./DayList";
 
 export default function CreateWord(){
-    const dayList:IDay[]= useFetch("http://localhost:3001/days");
+    const dayUrl = process.env.REACT_APP_DAYLIST as string
+    const wordUrl = process.env.REACT_APP_WORD as string +"/"
+    const dayList:IDay[]= useFetch(dayUrl);
     const history = useHistory();
     const [isLoading,setIsLoading] = useState(false);
 
@@ -19,7 +21,8 @@ export default function CreateWord(){
                 const day = dayRef.current.value
                 const eng = engRef.current.value;
                 const kor = korRef.current.value;
-                fetch(`http://localhost:3001/words/`,{
+                //fetch(`http://localhost:3001/words/`,{
+                fetch(wordUrl,{
                     method: 'POST',
                     headers :{
                         'content-Type' : 'application/json',
