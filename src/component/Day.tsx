@@ -7,9 +7,9 @@ export default function Day(){
     
 
     const {day} = useParams<{day:string}>();
+  
     //const wordList:IWord[]= dummy.words.filter(word => word.day===day);
     
-    //
     const wordList:IWord[] = useFetch(`http://localhost:3001/words?day=${day}`);
     /*
     const [wordList, setWordList] = useState<IWord[]>([]);
@@ -25,6 +25,7 @@ export default function Day(){
     
     return <>
         <h2>Day {day}</h2>
+        {wordList.length ===0 && <span>Loding...</span>}
         <table>
             <tbody>
                 {wordList.map(word =>(
