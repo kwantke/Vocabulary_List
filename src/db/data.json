@@ -27,6 +27,10 @@
     {
       "day": 7,
       "id": 7
+    },
+    {
+      "day": 8,
+      "id": 8
     }
   ],
   "words": [
@@ -36,13 +40,6 @@
       "eng": "book",
       "kor": "책",
       "isDone": true
-    },
-    {
-      "id": 3,
-      "day": "2",
-      "eng": "car",
-      "kor": "자동차",
-      "isDone": false
     },
     {
       "id": 5,
@@ -73,13 +70,6 @@
       "id": 8
     },
     {
-      "day": "2",
-      "eng": "mouse",
-      "kor": "쥐",
-      "isDone": false,
-      "id": 9
-    },
-    {
       "day": "4",
       "eng": "monkey",
       "kor": "원숭이",
@@ -106,7 +96,20 @@
       "kor": "집",
       "isDone": false,
       "id": 14
+    },
+    {
+      "day": "2",
+      "eng": "window",
+      "kor": "창문",
+      "isDone": false,
+      "id": 15
+    },
+    {
+      "day": "2",
+      "eng": "mouse",
+      "kor": "쥐",
+      "isDone": false,
+      "id": 16
     }
-    
   ]
 }
