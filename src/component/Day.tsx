@@ -9,8 +9,8 @@ export default function Day(){
     const {day} = useParams<{day:string}>();
   
     //const wordList:IWord[]= dummy.words.filter(word => word.day===day);
-    
-    const wordList:IWord[] = useFetch(`http://localhost:3001/words?day=${day}`);
+    const wordUrl = process.env.REACT_APP_WORD as string +"?day=" +day;
+    const wordList:IWord[] = useFetch(wordUrl);
     /*
     const [wordList, setWordList] = useState<IWord[]>([]);
     useEffect(()=>{
