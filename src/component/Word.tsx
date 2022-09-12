@@ -23,6 +23,7 @@ export default function Word({word}: IProps){
     }
     return (
         <tr className={isDone? "off":""}>
+            
             <td>
                 <input type="checkbox" checked={isDone} onChange={toggleDone}/>
             </td>
