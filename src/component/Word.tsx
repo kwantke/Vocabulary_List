@@ -15,12 +15,14 @@ export default function Word({word:w}: IProps){
     const [word,setWord] = useState(w); 
     const [isShow, setIsShow] = useState(false);
     const [isDone, setIsDone] = useState(word.isDone);
+    const wordUrl = process.env.REACT_APP_WORD as string +"/"+ word.id;
     function toggleShow(){
         setIsShow(!isShow)
     }
     function toggleDone(){
         //setIsDone(!isDone);
-        fetch(`http://localhost:3001/words/${word.id}`,{
+
+        fetch(wordUrl,{
             method: 'PUT',
             headers :{
                 'content-Type' : 'application/json',
@@ -39,7 +41,8 @@ export default function Word({word:w}: IProps){
 
     function del(){
         if(window.confirm("삭제 하시겠습니까?")){
-            fetch(`http://localhost:3001/words/${word.id}`,{
+            //fetch(`http://localhost:3001/words/${word.id}`,{
+            fetch(wordUrl,{
                 method : 'DELETE',
         }).then(res=>{
                 if(res.ok){
